@@ -17,8 +17,8 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 main_directory = os.path.abspath(os.path.dirname(__file__))
 # Add main directory and its subdirectories to sys.path
 sys.path.append(main_directory)
-sys.path.append("/mount/src/carlat-qa-editor-dev-env/src")
-sys.path.append("/mount/src/carlat-qa-editor-dev-env")
+sys.path.append("/mount/src/carlat_qa_live_update/src")
+sys.path.append("/mount/src/carlat_qa_live_update")
 
 
 # sys.path.append("C:\\Users\\dell\\Documents\\GitHub\\carlat-qa-editor-dev-env\\src")

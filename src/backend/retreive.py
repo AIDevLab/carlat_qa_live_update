@@ -4,19 +4,16 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
 import docx
-from langchain.chains.question_answering import load_qa_chain
 import nltk 
 import sys
-from langchain_openai import AzureOpenAIEmbeddings
-
 nltk.download('punkt')
 import streamlit as st
 
 # sys.path.append("C:\\Users\\dell\\Documents\\GitHub\\carlat-qa-editor-dev-env\\src")
 # sys.path.append("C:\\Users\\dell\\Documents\\GitHub\\carlat-qa-editor-dev-env\\src\\backend")
 
-sys.path.append("/mount/src/carlat-qa-editor-dev-env/src")
-sys.path.append("/mount/src/carlat-qa-editor-dev-env/src/backend")
+sys.path.append("/mount/src/carlat_qa_live_update/src")
+sys.path.append("/mount/src/carlat_qa_live_update/src/backend")
 
 # Get the absolute path to the main directory (my_project)
 main_directory = os.path.abspath(os.path.dirname(__file__))
