@@ -1,0 +1,15 @@
+fastapi==0.110.1
+openai==1.16.1
+streamlit==1.32.2
+streamlit_extras==0.4.0
+python-docx==1.1.0
+outlines==0.0.37
+python-docx
+tiktoken
+langchain==0.1.16
+langchain_openai
+langchain_community==0.0.33
+nltk==3.8.1
+faiss-cpu
+python-Levenshtein
+Spire.Doc==12.4.0

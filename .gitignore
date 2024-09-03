@@ -1,0 +1,16 @@
+venv 
+.git
+src/frontend/Output.txt
+src/documents/Copy of CATR_QA Gambling Addiction_Fong.docx
+src/output.txt
+src/standalone_quotes.py
+src/test.py
+test/key_models.py
+src/backend/__pycache__/setup_vectorstore.cpython-311.pyc
+src/backend/__pycache__/retreive.cpython-311.pyc
+src/backend/__pycache__/utility_functions.cpython-311.pyc
+src/backend/__pycache__/__init__.cpython-311.pyc
+src/backend/__pycache__/get_key_topics_.cpython-311.pyc
+src/frontend/__pycache__/__init__.cpython-311.pyc
+src/frontend/memorable_quotes.docx
+src/frontend/generated_draft.docx
