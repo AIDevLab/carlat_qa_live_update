@@ -203,7 +203,7 @@ with st.container(border=False):
                 st.session_state.topics, st.session_state.list_topics = get_key_topics(st.session_state.file_content, st.session_state.custom_topics_prompt)
                 st.session_state.keywords_extracted = True
     if st.session_state.keywords_extracted == True:
-        topics_area = st.text_area("Edit Key Topics", st.session_state.topics , height=300, on_change = get_updated_key_topics)
+        topics_area = st.text_area("Edit Key Topics", st.session_state.topics , height=400, on_change = get_updated_key_topics)
         if st.button("update key topics"):
             st.session_state.list_topics = [item for item in topics_area.split("\n") if item != ""]
             st.session_state.topics = '\n\n'.join(st.session_state.list_topics)
@@ -258,7 +258,7 @@ with st.container(border=False):
             st.rerun()
 
     if st.session_state.quotes_retreived == True:
-        quotes_text_area = st.text_area("Quotes", st.session_state.quotes_text, height=500)
+        quotes_text_area = st.text_area("Quotes", st.session_state.quotes_text, height=600)
     if st.button("Update quotes"):
         if st.session_state.quotes_retreived == False:
             st.warning("Please generate quotes first.")
@@ -327,7 +327,7 @@ with st.container(border=False):
                 st.rerun()
    
     if st.session_state.all_qa_text !="":
-        qa_text_area = st.text_area("Q/A", st.session_state.all_qa_text, height=500)
+        qa_text_area = st.text_area("Q/A", st.session_state.all_qa_text, height=600)
 
     if st.button("Generate draft", st.session_state.final_draft):
         if st.session_state.all_qa_text == "":
