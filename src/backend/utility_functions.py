@@ -62,7 +62,7 @@ def get_quotes_qa_ourlines(transcript, topic):
     extract quotes that are related to a specific topic from a trasncript
 
     Args:
-        transcript (str): Theinterview transcript
+        transcript (str): The interview transcript
         topic (str): the topic that the quotes are related to
 
     Returns: json-like string
@@ -85,8 +85,8 @@ def get_quotes_qa_ourlines(transcript, topic):
 
     # Construct structured sequence generator
     generator = outlines.generate.json(model, Output)
-    output = generator("""Given an interview transcript and a specific topic your role is to extract all the quotes related to that topic from the topics. 
-                        After that, use those quotes to generat from 1 to 3 well-worded questions- answers that cover what appeared in the extracted quotes.
+    output = generator("""Given an interview transcript and a specific topic your role is to extract all the quotes related to that topic from the transcript. 
+                        After that, use those quotes to generate from 1 to 3 well-worded questions- answers that cover what appeared in the extracted quotes.
                         The final output must be in a python parsable JSON format as follows:
                         
                         {"quotes": "....",
