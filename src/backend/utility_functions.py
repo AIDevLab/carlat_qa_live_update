@@ -932,13 +932,14 @@ def correct_quotes_topic_assignment(quote, topics):
 
             <INSTRUCTIONS START>
 
-            1. Identify the one and only one topic that the quote relates to the most from the list of options.
-            2. Return an updated dictionnary in such a way that each quote(key) has only one value(one topic, which is the one the quote relates to the most)
+            1. Identify up to the top two topics that the quote relates to the most from the list of options.
+            2. Return an updated dictionnary in such a way that each quote(key) has up to two values(two topic, which is the one the quote relates to the most)
             3. Return the quotes exactly as they were inputed, do not modify the quotes 
             4. The selected topic should be returned in the same way it was inputed (include topic number detail)
             5. Limit the topic selection to the list of topics attributed to each quote.
             6. Do not attribute to a quote a topic that doesnt exist in its related list of topics.
-            7. Do not start the topic by - 
+	    7. Ensure that every topic has at least one quote.
+            8. Do not start the topic by - 
             - Ensure the generated content is returned in a valid JSON format as illustarted bellow:
 
                 <OUTPUT FORMAT START>
