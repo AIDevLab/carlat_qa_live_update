@@ -1261,8 +1261,8 @@ def update_topic_assignment_all_at_once(redundant_quotes_dict, topics_dict, topi
 
         <INSTRUCTIONS START>
 
-        1. For each quote, identify up to two topics that each quote relates to the most from the list of options.
-        2. Return a dictionnary in such a way that each quote(key) has up to two values(two topics, which is the one the quote relates to the most)
+        1. For each quote, identify up to three topics that each quote relates to the most from the list of options.
+        2. Return a dictionnary in such a way that each quote(key) has up to three values(three topics, which is the one the quote relates to the most)
         3. Return the quotes exactly as they were inputed, do not modify the quotes 
         4. The selected topic should be returned in the same way it was inputed (include topic number detail)
         5. Limit the topic selection to the list of topics attributed to each quote.
