@@ -190,7 +190,7 @@ with st.container(border=False):
             # setup vectore store 
             docs = text_splitter(st.session_state.file_content)
             docsearch = create_embedding(docs)
-            docsearch.save_local('/mount/src/caralt-qa-editor-adl/src/vectorstore')
+            docsearch.save_local('/mount/src/carlat_qa_live_update/src/vectorstore')
 
     custom_topics_prompts = st.checkbox(label= 'Use custom prompt to extract key topics')
     if custom_topics_prompts:
