@@ -20,14 +20,6 @@ import traceback
 import concurrent.futures
 from pydantic import BaseModel
 
-
-
-
-
-class enhanced_qa(BaseModel):
-    question: str
-    answer: str
-
 # Get the absolute path to the main directory (my_project)
 main_directory = os.path.abspath(os.path.dirname(__file__))
 # Add main directory and its subdirectories to sys.path

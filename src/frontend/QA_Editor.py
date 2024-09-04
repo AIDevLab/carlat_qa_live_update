@@ -20,17 +20,11 @@ sys.path.append(main_directory)
 sys.path.append("/mount/src/carlat_qa_live_update/src")
 sys.path.append("/mount/src/carlat_qa_live_update")
 
-
-# sys.path.append("C:\\Users\\dell\\Documents\\GitHub\\carlat-qa-editor-dev-env\\src")
-# sys.path.append("C:\\Users\\dell\\Documents\\GitHub\\carlat-qa-editor-dev-env\\src\\backend")
-
 from backend.setup_vectorstore import *
 from backend.utility_functions import *
-
-from backend.utility_functions import find_redundant_quotes, correct_quotes_topic_assignment
+from backend.utility_functions import find_redundant_quotes
 from backend.retreive import *
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
-
 
 
 
@@ -42,8 +36,6 @@ def update_file_params():
 
 
 def process_quote(topic, quote,  custom_qa_prompts):
-    # print("processing quote ----------------------------------")
-    # print(quote[:30])
     #  process each quote
     qa = get_qa_for_quote(quote, topic, custom_qa_prompts)
     qa_json = json.loads(qa)
@@ -250,26 +242,15 @@ with st.container(border=False):
                 my_bar.progress(progress, text=progress_text)
             my_bar.empty()
 
-            # print(st.session_state.topics_dict[topic]["quotes"])
-            # print("-----------------------------------------------------")
-
             st.session_state.btn_draft_download_status = False
             st.session_state.running = False
 
             # find redundant quotes to topic assingment
             redundant_quotes_dict = find_redundant_quotes(st.session_state.topics_dict)
 
-            # print("----------------------RED--------------------------")
-            # print(redundant_quotes_dict)
-            # print("*************************************************")
-            # print(st.session_state.topics_dict)
-            # print("------------------------------------------------")
             topics = st.session_state.topics_dict.keys()
             st.session_state.topics_dict = update_topic_assignment_all_at_once(redundant_quotes_dict, st.session_state.topics_dict, topics)
-            # print("*************************************************")
-            # print(st.session_state.topics_dict)
-            # print("------------------------------------------------")
-
+        
             # format the topics and quotes 
             st.session_state.quotes_text, st.session_state.all_quotes_list = parse_response_quotes(st.session_state.topics_dict)
             st.session_state.quotes_retreived = True
@@ -359,8 +340,6 @@ with st.container(border=False):
             st.session_state.final_draft = remove_duplicates_levenshtein(initial_draft.split("\n\n"), threshold_ratio=0.65)
             # update the conversation flow and vary the questions 
             st.session_state.final_draft = make_transcript_flowful(st.session_state.topics_dict.keys(), initial_draft)
-            #st.session_state.all_qa_text = format_qa_content_all(st.session_state.topics_dict)
-            #st.download_button("Download draft", st.session_state.final_draft)
 
             document = doc()
             document.add_paragraph(st.session_state.final_draft)

@@ -9,9 +9,6 @@ import sys
 nltk.download('punkt')
 import streamlit as st
 
-# sys.path.append("C:\\Users\\dell\\Documents\\GitHub\\carlat-qa-editor-dev-env\\src")
-# sys.path.append("C:\\Users\\dell\\Documents\\GitHub\\carlat-qa-editor-dev-env\\src\\backend")
-
 sys.path.append("/mount/src/carlat_qa_live_update/src")
 sys.path.append("/mount/src/carlat_qa_live_update/src/backend")
 
@@ -27,7 +24,7 @@ client = OpenAI(api_key=st.secrets["api_key"])
 
 def load_vectorstore(): 
     embeddings = OpenAIEmbeddings(model="text-embedding-3-large", api_key=st.secrets["api_key"])
-    docsearch = FAISS.load_local("//mount//src//caralt-qa-editor-adl//src//vectorstore", embeddings, allow_dangerous_deserialization= True)
+    docsearch = FAISS.load_local("//mount//src//carlat_qa_live_update//src//vectorstore", embeddings, allow_dangerous_deserialization= True)
     return docsearch
 
 
